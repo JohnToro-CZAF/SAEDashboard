@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature-Centric</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feature-Centric View</h1>
+
+        <h2>Old View</h2>
+        <button id="collectActivations" class="btn">Collect Max Activations</button>
+
+        <h2>New View</h2>
+        <div class="input-group">
+            <label for="exampleInput">Enter Examples:</label>
+            <input type="text" id="exampleInput" placeholder="Enter examples" required>
+        </div>
+        <button id="queryRelatedFeatures" class="btn">Query Related Features</button>
+
+        <div class="input-group">
+            <label for="specificFeature">Enter a Specific Feature:</label>
+            <input type="text" id="specificFeature" placeholder="Enter a specific feature">
+        </div>
+        <button id="queryCorrelatedFeatures" class="btn">Query Correlated Features</button>
+
+        <div id="results"></div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
