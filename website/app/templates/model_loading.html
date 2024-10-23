@@ -14,18 +14,20 @@
                 <label for="saeModel">SAE Huggingface Model:</label>
                 <input type="text" id="saeModel" name="saeModel" required>
                 <!-- New button to query the model -->
-                 <p id="validationMessage"></p>
+                 <p class="validationMessage" id="saeModelValMes"></p>
                 <button type="button" id="queryModelBtn" class="btn">Query Model Info</button>
             </div>
 
             <div class="input-group">
                 <label for="pretrainedModel">Pretrained Model:</label>
                 <input type="text" id="pretrainedModel" name="pretrainedModel" required>
+                 <p class="validationMessage" id="pretrainedValMes"></p>
             </div>
 
             <div class="input-group">
                 <label for="dataset">Dataset Name:</label>
                 <input type="text" id="dataset" name="dataset" required>
+                 <p class="validationMessage" id="datasetValMes"></p>
             </div>
 
             <div class="input-group">
@@ -43,6 +45,12 @@
 
         <!-- Placeholder to display model information -->
         <div id="modelInfo" class="model-info-box"></div>
+        <div id="layer" class="layer">
+            <div id = "layerContent" class="layer-content">
+                <span class="close-button">&times;</span>
+                <div id="layerBody"></div>
+            </div>
+        </div>
     </div>
     <script src="/static/app.js"></script>
 </body>

@@ -18,7 +18,7 @@ body {
 /* Centering the content */
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
     text-align: center;
     background: #fff;
@@ -99,4 +99,124 @@ input:focus, textarea:focus {
     font-size: 0.9em;
     text-align: left;
     word-wrap: break-word;
+}
+
+.layers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.layer-box {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e7f1ff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.layer-box:hover {
+    background-color: #d0e7ff;
+}
+
+.layer {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.layer-content {
+    background-color: #fff;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    text-align: left;
+    border-radius: 5px;
+    position: relative;
+}
+
+.json-body {
+    background-color: #fff;
+    /* margin: 10% auto;  */
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 80%; 
+    max-width: 500px;
+    text-align: left;
+    /* border-radius: 5px; */
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.key {
+    color: #92278f;
+}
+
+.string {
+    color: #3ab54a;
+}
+
+.number {
+    color: #f08a5d;
+}
+
+.boolean {
+    color: #1c8ef9;
+}
+
+.null {
+    color: #808080;
+}
+
+.collapsible {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible::before {
+    content: '▼ ';
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.collapsible.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+.nested {
+    display: block;
+    margin-left: 20px;
+}
+
+.hidden {
+    display: none;
 }

@@ -17,10 +17,32 @@ def check_model_exists(sae_model: str) -> bool:
         print(f"Error checking model: {e}")
         return False
 
+def check_dataset_exists(dataset: str) -> bool:    
+    try:
+        response = requests.get(f"https://huggingface.co/datasets/{dataset}")
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    except:
+        return False
+    
+
 def download_config(sae_model: str) -> str:
     cfg_path = hf_hub_download(
         repo_id=sae_model, filename=f"config.json", force_download=True
     )
+    with open(cfg_path, "r") as f:
+        cfg = json.load(f)
+    return cfg
+
+def download_layer_config(sae_model: str, layer:str) -> str:
+    cfg_path = hf_hub_download(
+        repo_id=sae_model, filename=f"layers.{layer}/cfg.json", force_download=True
+    )
+        #     cfg_path = hf_hub_download(
+        #     repo_id=release, filename=f"{sae_id}/cfg.json", force_download=True
+        # )
     with open(cfg_path, "r") as f:
         cfg = json.load(f)
     return cfg

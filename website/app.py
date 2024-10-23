@@ -34,35 +34,6 @@ def feature_centric():
 def prompt_centric():
     return render_template('prompt_centric.html')
 
-# Dummy model information data (Replace this with real Huggingface model query code)
-def get_model_info(sae_model):
-    # Example response (in a real implementation, this could query Huggingface API)
-    model_info = {
-        "model_name": sae_model,
-        "description": "This is a dummy description for the model.",
-        "parameters": 12345678,
-        "tasks_supported": ["classification", "regression"],
-    }
-    return model_info
-
-# Route to query model information
-@app.route('/query-model-info', methods=['POST'])
-def query_model_info():
-    data = request.get_json()
-    sae_model = data.get('saeModel')
-    
-    if not sae_model:
-        return jsonify({"error": "Model name not provided"}), 400
-
-    # Fetch model information (replace with actual processing)
-    model_info = get_model_info(sae_model)
-
-    return jsonify(model_info)
-
-
-
-
-
 @app.route('/load-model', methods=['POST'])
 def load_model():
     data = request.get_json()
